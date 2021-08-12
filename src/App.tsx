@@ -1,8 +1,13 @@
+import AppRouter from "./AppRouter";
+import Header from "./components/common/Header";
+
 function App() {
   return (
-    <div>
-      <h3>Hello world</h3>
-    </div>
+    <>
+      <AppRouter>
+        <Header />
+      </AppRouter>
+    </>
   );
 }
 
