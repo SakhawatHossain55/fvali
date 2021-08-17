@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
-// import logo from 'assets/images/fvaly.png';
+import logo from "assets/images/logo.svg";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FiShoppingBag, FiUser } from "react-icons/fi";
 import { IoMdNotificationsOutline } from "react-icons/io";
@@ -14,8 +14,8 @@ function HeaderMiddel() {
           <Col md="auto">
             <div className="header__middle--logo">
               <a href="#">
-                logo
-                {/* <img src={logo} alt="" /> */}
+                {/* logo */}
+                <img src={logo} alt="" />
               </a>
             </div>
           </Col>

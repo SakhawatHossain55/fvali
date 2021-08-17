@@ -1,6 +1,6 @@
 import React from "react";
 import HeaderTop from "./HeaderTop";
-import HeaderMiddel from "./HeaderMiddel";
+import HeaderMiddel from "./HeaderMiddle";
 import HeaderButtom from "./HeaderButtom";
 
 const Header = () => {
