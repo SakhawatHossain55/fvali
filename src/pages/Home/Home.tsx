@@ -1,31 +1,22 @@
 import Banner from "components/home/Banner/Banner";
 import Products from "components/home/Products/Products";
-// import { IProduct } from "Models/types";
-// eslint-disable-next-line import/no-duplicates
-import React, { useEffect } from "react";
-// eslint-disable-next-line import/no-duplicates
-import { useState } from "react";
-// import ProductService from "services/ProductService";
+import React, { useEffect, useState } from "react";
+import ProductService from "services/ProductService";
+import { IProduct } from "types";
 
 const Home = () => {
-  const [product, setProduct] = useState({});
+  const [products, setProducts] = useState<IProduct[]>([]);
 
   useEffect(() => {
-    fetch("https://fvaly.herokuapp.com/api/product")
-      .then((res) => res.json())
-      .then((data) => {
-        setProduct(data.data);
-      });
-    // ProductService.getProducts()
-    // .then((res: React.SetStateAction<IProduct[]>) =>  setProduct(res))
+    ProductService.getProducts().then((res) => setProducts(res));
   }, []);
+
+  // const { data, isLoading } = useAsync(ProductService.getProducts);
 
   return (
     <div>
       <Banner />
-      {console.log(product)}
-
-      <Products />
+      <Products products={products} />
     </div>
   );
 };
