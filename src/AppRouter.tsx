@@ -1,3 +1,4 @@
+import Footer from "components/common/Footer";
 import ProductDetails from "components/home/ProductDetails";
 import React, { Suspense } from "react";
 
@@ -17,6 +18,7 @@ const AppRouter: React.FC = ({ children }) => {
           <Route exact path="/product/:id" component={ProductDetails} />
         </Suspense>
       </Switch>
+      <Footer />
     </Router>
   );
 };
