@@ -1,12 +1,16 @@
 import React from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import logo from "assets/images/logo.svg";
+import { useSelector } from "react-redux";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FiShoppingBag, FiUser } from "react-icons/fi";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { BsChatSquare } from "react-icons/bs";
+import { AppState } from "redux/store";
 
 function HeaderMiddel() {
+  const cart = useSelector((state: AppState) => state.cart);
+
   return (
     <div className="header__middle py-3">
       <Container>
@@ -14,7 +18,6 @@ function HeaderMiddel() {
           <Col md="auto">
             <div className="header__middle--logo">
               <a href="#">
-                {/* logo */}
                 <img src={logo} alt="" />
               </a>
             </div>
@@ -40,6 +43,7 @@ function HeaderMiddel() {
             <div className="d-flex">
               <button>
                 <FiShoppingBag />
+                <span className="badge bg-primary">{cart.length}</span>
               </button>
             </div>
 

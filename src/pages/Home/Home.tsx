@@ -16,13 +16,12 @@ const Home = () => {
   // }, []);
 
   const [storeData, setStoreData] = useState<IStore[]>([]);
-  console.log(storeData);
+
   useEffect(() => {
     StoreService.getStores().then((res) => setStoreData(res));
   }, []);
 
   const { data, isLoading, isSuccess } = useAsync(ProductService.getProducts);
-  console.log(data);
 
   return (
     <div>

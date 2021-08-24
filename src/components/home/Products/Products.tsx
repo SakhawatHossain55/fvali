@@ -11,8 +11,6 @@ interface IProp {
 }
 
 const Products = ({ products, isLoading, isSuccess }: IProp) => {
-  console.log(products);
-
   return (
     <>
       <Container>

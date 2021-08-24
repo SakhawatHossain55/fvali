@@ -8,7 +8,6 @@ interface IProp {
 }
 
 const StorProduct = ({ storeProduct }: IProp) => {
-  console.log(storeProduct);
   const { name, image, _id } = storeProduct;
   return (
     <Col md={3} className="mb-3">

@@ -10,8 +10,6 @@ interface IProp {
 }
 
 const ShopByStore = ({ shopByStore, isLoading, isSuccess }: IProp) => {
-  console.log(shopByStore);
-
   return (
     <div>
       <Container>
