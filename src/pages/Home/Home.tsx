@@ -12,12 +12,13 @@ const Home = () => {
   //   ProductService.getProducts().then((res) => setProducts(res));
   // }, []);
 
-  const { data, isLoading } = useAsync(ProductService.getProducts);
+  const { data, isLoading, isSuccess } = useAsync(ProductService.getProducts);
+  console.log(data);
 
   return (
     <div>
       <Banner />
-      <Products isLoading={isLoading} products={data} />
+      <Products isSuccess={isSuccess} isLoading={isLoading} products={data} />
     </div>
   );
 };

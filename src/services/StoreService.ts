@@ -1,23 +1,23 @@
+import { IProduct } from "./../types.d";
 import requests from "services/httpService";
-import { IStore } from "types";
 class StoreService {
-  getStores(): Promise<IStore> {
+  getStores(): Promise<IProduct[]> {
     return requests.get("/store");
   }
 
-  getStoreByID(id: string): Promise<IStore> {
+  getStoreByID(id: string): Promise<IProduct> {
     return requests.get(`/store/${id}`);
   }
 
-  addStore(body: {}): Promise<IStore> {
+  addStore(body: {}): Promise<IProduct> {
     return requests.post(`/store/`, body);
   }
 
-  updateStore(id: string, body: {}): Promise<IStore> {
+  updateStore(id: string, body: {}): Promise<IProduct> {
     return requests.post(`/store/${id}`, body);
   }
 
-  deleteStore(id: string): Promise<IStore> {
+  deleteStore(id: string): Promise<IProduct> {
     return requests.delete(`/store/${id}`);
   }
 }

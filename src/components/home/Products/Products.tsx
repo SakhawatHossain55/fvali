@@ -1,31 +1,32 @@
-import Product from "components/common/Product/Product";
+import Product from "components/common/Product";
 import React from "react";
 import { Container, Row } from "react-bootstrap";
-import ProductsSkeletion from "skeletions/ProductsSkeletion";
+import ProductSkeletiton from "skeletions/ProductsSkeletion";
 import { IProduct } from "types";
 
-interface IProps {
+interface IProp {
   products: IProduct[] | null;
   isLoading: boolean;
+  isSuccess: boolean;
 }
 
-const Products = ({ products, isLoading }: IProps) => {
+const Products = ({ products, isLoading, isSuccess }: IProp) => {
   console.log(products);
 
   return (
-    <div className="my-5">
+    <>
       <Container>
         <h2 className="mb-4">Latest Products</h2>
-        {isLoading && <ProductsSkeletion />}
-        {!isLoading && (
-          <Row>
+        {isLoading && <ProductSkeletiton />}
+        {isSuccess && (
+          <Row className="align-items-stretch">
             {products?.map((product: IProduct) => (
-              <Product product={product} key={product._id} />
+              <Product key={product._id} product={product} />
             ))}
           </Row>
         )}
       </Container>
-    </div>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
-import requests from "services/httpService";
-import { IProduct } from "types";
+import { IProduct } from "./../types.d";
+import requests from "./httpService";
+
 class ProductService {
   getProducts(): Promise<IProduct[]> {
     return requests.get("/product");
