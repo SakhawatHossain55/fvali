@@ -43,8 +43,10 @@ function HeaderMiddel() {
           >
             <div className="d-flex">
               <button>
-                <FiShoppingBag />
-                <span className="badge bg-primary">{cart.length}</span>
+                <Link to="/checkout">
+                  <FiShoppingBag />
+                  <span className="badge bg-primary">{cart.length}</span>
+                </Link>
               </button>
             </div>
 

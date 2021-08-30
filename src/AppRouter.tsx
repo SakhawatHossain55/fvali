@@ -1,6 +1,7 @@
 import Footer from "components/common/Footer";
 import ProductDetails from "components/home/ProductDetails";
 import Login from "Login/Login";
+import Checkout from "pages/Checkout/Checkout";
 import React, { Suspense } from "react";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -20,6 +21,7 @@ const AppRouter: React.FC = ({ children }) => {
           <Route exact path="/signIn" component={SignIn} />
           <Route exact path="/help" component={Help} />
           <Route exact path="/product/:id" component={ProductDetails} />
+          <Route path="/checkout/" component={Checkout} />
         </Suspense>
       </Switch>
       <Footer />
