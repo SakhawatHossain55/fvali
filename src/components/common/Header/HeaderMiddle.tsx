@@ -7,6 +7,7 @@ import { FiShoppingBag, FiUser } from "react-icons/fi";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { BsChatSquare } from "react-icons/bs";
 import { AppState } from "redux/store";
+import { Link } from "react-router-dom";
 
 function HeaderMiddel() {
   const cart = useSelector((state: AppState) => state.cart);
@@ -60,7 +61,9 @@ function HeaderMiddel() {
 
             <div className="d-flex">
               <button>
-                <FiUser />
+                <Link to="/login">
+                  <FiUser />
+                </Link>
               </button>
             </div>
           </Col>
