@@ -1,16 +1,20 @@
 import React from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import logo from "assets/images/logo.svg";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FiShoppingBag, FiUser } from "react-icons/fi";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { BsChatSquare } from "react-icons/bs";
 import { AppState } from "redux/store";
 import { Link } from "react-router-dom";
+import { FaSignOutAlt } from "react-icons/fa";
+import { logout } from "redux/actionCreators/authActionCreators";
 
 function HeaderMiddel() {
+  const dispatch = useDispatch();
   const cart = useSelector((state: AppState) => state.cart);
+  const { data } = useSelector((state: AppState) => state.auth);
 
   return (
     <div className="header__middle py-3">
@@ -24,7 +28,7 @@ function HeaderMiddel() {
             </div>
           </Col>
           <Col
-            md={8}
+            md={7}
             className="header__middle--search d-flex justify-content-end align-items-center"
           >
             <Form className="w-100">
@@ -60,7 +64,6 @@ function HeaderMiddel() {
                 <BsChatSquare />
               </button>
             </div>
-
             <div className="d-flex">
               <button>
                 <Link to="/login">
@@ -68,6 +71,13 @@ function HeaderMiddel() {
                 </Link>
               </button>
             </div>
+            {data && (
+              <div className="d-flex">
+                <button onClick={() => dispatch(logout())}>
+                  <FaSignOutAlt />
+                </button>
+              </div>
+            )}
           </Col>
         </Row>
       </Container>

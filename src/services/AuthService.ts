@@ -1,7 +1,7 @@
 import { IAuthData } from "../types";
 import requests from "services/httpService";
 class AuthService {
-  addStore(body: { email: string; password: string }): Promise<IAuthData> {
+  login(body: { email: string; password: string }): Promise<IAuthData> {
     return requests.post(`/auth/login`, body);
   }
 

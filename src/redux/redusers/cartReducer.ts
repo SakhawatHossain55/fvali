@@ -1,6 +1,6 @@
 import { CartAction } from "redux/actions/cartAction";
 import { ActionType } from "redux/actionType";
-import { IProduct } from "./../../types";
+import { IProduct } from "../../types";
 
 const cartReducer = (
   state: IProduct[] = [],
