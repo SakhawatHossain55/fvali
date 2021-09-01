@@ -7,7 +7,7 @@ import imageUrlParser from "utils/imageUrlParser";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useCallback } from "react";
 import useAsync from "hooks/useAsync";
-import { addToCart } from "redux/actions/cartActions";
+import { addToCart } from "redux/actionCreators/cartActions";
 interface IParams {
   id: string;
 }
@@ -24,9 +24,9 @@ const ProductDetails = () => {
   const { name, image, description, price } = (data || {}) as IProduct;
 
   return (
-    <div className="product__details__component my-3">
+    <div className="my-3 product__details__component">
       <Container>
-        <div className="wrapper bg-white rounded border p-4">
+        <div className="p-4 bg-white border rounded wrapper">
           {isLoading && <h3>Loading ....</h3>}
           {isSuccess && (
             <Row>

@@ -9,13 +9,9 @@ export interface IProduct {
   __v: number;
 }
 
-export interface IStore {
-  _id?: string;
+export interface IAuthData {
   name: string;
-  category: string;
-  description: string;
-  store: string;
-  price: number;
-  image: string;
-  __v: number;
+  id: string;
+  status: string;
+  token: string;
 }
