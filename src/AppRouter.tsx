@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SignIn from "SignIn/SignIn";
 const Home = React.lazy(() => import("./pages/Home/Home"));
 const Help = React.lazy(() => import("./pages/Help/Help"));
+const Dashboard = React.lazy(() => import("admin/layout/DefaultLayout"));
 
 // eslint-disable-next-line react/prop-types
 const AppRouter: React.FC = ({ children }) => {
@@ -22,6 +23,7 @@ const AppRouter: React.FC = ({ children }) => {
           <Route exact path="/help" component={Help} />
           <Route exact path="/product/:id" component={ProductDetails} />
           <Route path="/checkout/" component={Checkout} />
+          <Route path="/dashboard" component={Dashboard} />
         </Suspense>
       </Switch>
       <Footer />

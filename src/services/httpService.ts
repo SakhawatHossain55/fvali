@@ -4,6 +4,28 @@ const instance = axios.create({
   baseURL: process.env.REACT_APP_API_BASE_URL,
   timeout: 15000,
 });
+// JSON.parse(JSON.parse(localStorage.getItem("persist:root")).auth).data.token
+
+// Add a request interceptor
+instance.interceptors.request.use(
+  function (config) {
+    // Do something before request is sent
+    console.log("Api is calling");
+
+    return {
+      ...config,
+      headers: {
+        Authorization: JSON.parse(
+          JSON.parse(localStorage.getItem("persist:root") || "").auth
+        )?.data?.token,
+      },
+    };
+  },
+  function (error) {
+    // Do something with request error
+    return Promise.reject(error);
+  }
+);
 
 const responseBody = (response: AxiosResponse) => response.data.data;
 

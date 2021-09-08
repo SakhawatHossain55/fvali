@@ -1,4 +1,6 @@
 import React from "react";
+import ApplePlayStore from "components/svg/ApplePlayStore";
+import GooglePlayStore from "components/svg/GooglePlayStore";
 import { Col, Container, Row } from "react-bootstrap";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io";
@@ -8,9 +10,13 @@ const Footer = () => {
     <div className="footer">
       <Container>
         <Row className="py-5">
-          <Col md={3} xs={6}>
-            <h3>Download</h3>
-            <a href="#"></a>
+          <Col md={3}>
+            <div className="download-icons p-2">
+              <h5 className="mb-3"> Download </h5>
+              <GooglePlayStore />
+              <br />
+              <ApplePlayStore />
+            </div>
           </Col>
           <Col md={3} xs={6} className="footer__items">
             <h3>Menu</h3>

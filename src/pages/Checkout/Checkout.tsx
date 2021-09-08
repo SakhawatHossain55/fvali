@@ -7,7 +7,6 @@ import { IProduct } from "types";
 
 const Checkout = () => {
   const cart: IProduct[] = useSelector((state: AppState) => state.cart);
-  console.log(cart);
 
   return (
     <div className=" my-3">
