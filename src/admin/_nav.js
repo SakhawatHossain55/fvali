@@ -32,12 +32,12 @@ const _nav = [
     items: [
       {
         component: CNavItem,
-        name: 'Accordion',
+        name: 'User List',
         to: '/base/accordion',
       },
       {
         component: CNavItem,
-        name: 'Breadcrumb',
+        name: 'merchants',
         to: '/base/breadcrumbs',
       },
       {
